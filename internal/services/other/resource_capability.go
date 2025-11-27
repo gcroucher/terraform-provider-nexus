@@ -76,6 +76,7 @@ func getCapabilityUpdateFromResourceData(d *schema.ResourceData) capability.Capa
 	}
 
 	return capability.CapabilityUpdate{
+		ID:         d.Id(),
 		Type:       d.Get("type").(string),
 		Notes:      d.Get("notes").(string),
 		Enabled:    d.Get("enabled").(bool),

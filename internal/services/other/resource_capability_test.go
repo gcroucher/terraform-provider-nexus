@@ -52,10 +52,7 @@ func TestAccResourceCapability(t *testing.T) {
 }
 
 func TestAccResourceCapabilityUpdate(t *testing.T) {
-	// SKIP: OutreachManagementCapability has known Nexus bugs with updates
-	// causing NullPointerException. This is a Nexus server issue.
-	// See: java.lang.NullPointerException: Cannot invoke "...CapabilityReference.context()"
-	t.Skip("Update test skipped due to known Nexus bug with OutreachManagementCapability updates")
+	// Note: ID must be included in the PUT body for updates to work
 
 	resName := "nexus_capability.acceptance"
 
